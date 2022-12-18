@@ -9,22 +9,15 @@ d3.json(url).then(function(data) {
   console.log(data);
 
   //create an array of each data
-  let names = obeject.values(data.names);
-  let metaData = object.values(data.metadata);
-  let smaplesData = object.values(data.samples)
-
-  //creating a dropdown list
-//   for(var i= 0; i<names.length;i++){
-//     var optn =names[i];
-//     var el = document.createElement("option");
-//     el.textContent = optn;
-//     el.value=optn;
-//     Selection.appendChild(el);
-//   }
+  let name = Object.values(data.names);
+  let metaData = Object.values(data.metadata);
+  let smaplesData = Object.values(data.samples)
+  //create a dropdown
   let dropdown =d3.select("#selDataset");
-  for(let i in names){
+
+  for(let i in name){
     let option =dropdown.append("option")
-    .text(names[i])
-    .attr("values",names[i]);
+    .text(name[i])
+    .attr("values",name[i]);
   }
- }
+ })
