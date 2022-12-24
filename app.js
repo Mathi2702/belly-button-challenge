@@ -50,8 +50,7 @@ function buildCharts(id_no){
             text: sample.otu_labels,
             mode: 'markers',
             marker: {
-              size: sample.sample_Values,
-              sizemode: 'diameter',
+              size: sample.sample_values,
               color: sample.otu_ids,
               colorscale: 'RdBu',
             }
@@ -62,8 +61,8 @@ function buildCharts(id_no){
           var layout = {
             title: "OTU ID",
             showlegend: false,
-            height: 600,
-            width: 1000
+            height: 800,
+            width: 1500
           };
           
           Plotly.newPlot('bubble', data, layout);
